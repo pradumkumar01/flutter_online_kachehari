@@ -127,7 +127,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     onPressed: () {},
-                    child: Text("Policy")),
+                    child: Text(" New Policy")),
                 SizedBox(height: 10),
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
