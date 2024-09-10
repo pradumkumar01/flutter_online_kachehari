@@ -153,8 +153,8 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             width: 20,
                           ),
-                          ElevatedButton(
-                              onPressed: () {
+                          InkWell(
+                              onTap: () {
                                 username.clear();
                                 password.clear();
                               },
@@ -169,8 +169,8 @@ class _LoginState extends State<Login> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        TextButton(
-                          onPressed: () {
+                        InkWell(
+                          onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => Register()));
                           },
