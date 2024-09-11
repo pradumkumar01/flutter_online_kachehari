@@ -24,18 +24,41 @@ class _HomeState extends State<Home> {
                 color: Colors.white,
               ))
         ],
-        leading: Icon(
-          Icons.home,
-          size: 30,
-          color: Colors.amberAccent,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: Icon(Icons.menu,
+                color: Colors.white,));
+          },
         ),
+        title: Text("Home"),
         backgroundColor: Colors.deepPurple,
-        title: Text(
-          "Home",
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.tealAccent),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text("Drawer Header")),
+            ListTile(
+              title: Text("Home"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Share"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("About"),
+              onTap: () {},
+            ),
+          ],
         ),
       ),
       body: Container(
@@ -58,91 +81,7 @@ class _HomeState extends State<Home> {
               height: 200,
             ),
             Column(
-              children: [
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 138,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("Home")),
-                SizedBox(height: 10),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 130,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("About Us")),
-                SizedBox(height: 10),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 124,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("Contact US")),
-                SizedBox(height: 10),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 131,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("Services")),
-                SizedBox(height: 10),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 137,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text(" New Policy")),
-                SizedBox(height: 10),
-                OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 100,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("Terms & Conditions")),
-              ],
+
             ),
           ],
         ),
