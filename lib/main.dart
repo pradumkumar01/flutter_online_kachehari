@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:login/Root/SplashScreen.dart';
+import 'package:online_kachehri/screens/SplashScreen.dart';
+void main() => runApp(const MyApp());
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Onboardin(),
+      title: 'Online_Kachehari',
+      theme: ThemeData( 
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
+        useMaterial3: true,
+      ),
+      home:  Splashscreen(),
     );
   }
 }
