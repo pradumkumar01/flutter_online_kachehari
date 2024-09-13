@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:login/Login/Login.dart';
+import 'package:login/component/Login/Login.dart';
 
-class Onboardin extends StatefulWidget {
-  const Onboardin({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<Onboardin> createState() => _OnboardinState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _OnboardinState extends State<Onboardin> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -30,7 +30,7 @@ class _OnboardinState extends State<Onboardin> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/bg2.jpg"),
+            image: AssetImage("assets/images/bg4.jpg"),
             opacity: 0.8,
             fit: BoxFit.cover,
             scale: 2.0,
@@ -48,22 +48,22 @@ class _OnboardinState extends State<Onboardin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) => const Login(),
-                          ),
-                        );
-                      },
-                      child: const Text(
-                        'Skip',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
+                    // TextButton(
+                    //   onPressed: () {
+                    //     Navigator.of(context).pushReplacement(
+                    //       MaterialPageRoute(
+                    //         builder: (context) => const Login(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: const Text(
+                    //     'Skip',
+                    //     style: TextStyle(
+                    //       color: Colors.white,
+                    //       fontSize: 20,
+                    //     ),
+                    //   ),
+                    // ),
                     SizedBox(
                       width: 20,
                     ),
