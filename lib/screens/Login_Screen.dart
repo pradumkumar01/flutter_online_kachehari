@@ -1,5 +1,4 @@
 // ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:online_kachehri/dialog/alert.dart';
 import 'package:online_kachehri/screens/Forgot_Screen.dart';
@@ -17,6 +16,7 @@ class _Login_ScreenState extends State<Login_Screen> {
   final _TextFeildController_for_email = TextEditingController();
   final _TextFeildController_for_password = TextEditingController();
   var _result_Login = '';
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,50 +105,41 @@ class _Login_ScreenState extends State<Login_Screen> {
                       // email code is here
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 270,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.3),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            controller: _TextFeildController_for_email,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.email),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your E-mail',
-                              labelText: 'E-mail',
-                              labelStyle: const TextStyle(
+                        child: Card(
+                          elevation: 4,
+                          shadowColor: Colors.grey,
+                          child: Container(
+                            width: 270,
+                            child: TextField(
+                              controller: _TextFeildController_for_email,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.email),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your E-mail',
+                                labelText: 'E-mail',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.emailAddress,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -156,51 +147,50 @@ class _Login_ScreenState extends State<Login_Screen> {
                       // password code is here
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 270,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.3),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            obscureText: true,
-                            controller: _TextFeildController_for_password,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.person),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your password',
-                              labelText: 'Password',
-                              labelStyle: const TextStyle(
+                        child: Card(
+                          shadowColor: Colors.grey,
+                          elevation: 4,
+                          child: Container(
+                            width: 270,
+                            child: TextField(
+                              obscureText: _showPassword?false:true,
+                              controller: _TextFeildController_for_password,
+                              decoration: InputDecoration(
+                                suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                    _showPassword = !_showPassword;
+                                  });
+                                  },
+                                  child: _showPassword? Icon(Icons.visibility):Icon(Icons.visibility_off),
+                                ),
+                                prefixIcon: const Icon(Icons.person),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your password',
+                                labelText: 'Password',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -226,39 +216,17 @@ class _Login_ScreenState extends State<Login_Screen> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 21,),
-                      Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius:  BorderRadius.circular(21),
-                          border:
-                              Border.all(color: Colors.white.withOpacity(0.5)),
-                          gradient: LinearGradient(
-                              colors: [
-                                Colors.blue.withOpacity(0.9),
-                                Colors.blue.withOpacity(0.3),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight),
-                        ),
-                        child: TextButton(
-                            onPressed: () {
-                              login_result();
-                            },
-                            child: const Text(
-                              'Log In ',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'serif',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                         const SizedBox(height: 21,),
+                     ElevatedButton(onPressed: (){login_result();},
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlue,elevation:2
+                      ),
+                      child:const Text("Login ",style: TextStyle(fontFamily: "serif",fontSize: 21,color: Colors.white),),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           const SizedBox(height: 55),
-                          
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -277,7 +245,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                                   onTap: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(builder: (context) {
-                                      return const SignupScreen();
+                                      return  SignupScreen();
                                     }));
                                   },
                                   child: const Center(

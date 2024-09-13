@@ -43,9 +43,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         alignment: Alignment.center,
-                        child: Image.asset('assets/images/app_logo_white.png'),
+                        child: Image.asset('assets/images/app_logo_lawyer.png'),
                       ),
-                     
                     ],
                   ),
                   Container(
@@ -56,7 +55,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(54),
                           topRight: Radius.circular(54)),
-                         
                     ),
                     child: Column(children: [
                       const SizedBox(
@@ -76,49 +74,38 @@ class _SignupScreenState extends State<SignupScreen> {
                       // name code is here
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.person),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your name',
-                              labelText: 'Name',
-                              labelStyle: const TextStyle(
+                        child: Card(elevation: 4,
+                          child: Container(
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.person),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your name',
+                                labelText: 'Name',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -127,49 +114,38 @@ class _SignupScreenState extends State<SignupScreen> {
 
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                      Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.email),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your E-mail',
-                              labelText: 'E-mail',
-                              labelStyle: const TextStyle(
+                        child: Card(elevation: 4,
+                          child: Container(
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.email),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your E-mail',
+                                labelText: 'E-mail',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.emailAddress,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -178,99 +154,38 @@ class _SignupScreenState extends State<SignupScreen> {
 
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.call),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your mobile no',
-                              labelText: 'Mobile',
-                              labelStyle: const TextStyle(
+                        child: Card(elevation: 4,
+                          child: Container(
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.call),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your mobile no',
+                                labelText: 'Mobile',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.phone,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
-                          ),
-                        ),
-                      ),
-
-                      // gender code is here
-                      Padding(
-                        padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                      Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.person_add),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your gender',
-                              labelText: 'Gender',
-                              labelStyle: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
-                            ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -278,51 +193,40 @@ class _SignupScreenState extends State<SignupScreen> {
                       // password code is here
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                      Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            obscureText: true,
-                            controller: _controllerFor_password,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.password_sharp),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your password',
-                              labelText: 'Password',
-                              labelStyle: const TextStyle(
+                        child: Card(elevation: 4,
+                          child: Container(
+                            width: 300,
+                            child: TextField(
+                              obscureText: true,
+                              controller: _controllerFor_password,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.password_sharp),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your password',
+                                labelText: 'Password',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
@@ -331,80 +235,50 @@ class _SignupScreenState extends State<SignupScreen> {
                       //  confirm password code is here
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                  Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            obscureText: true,
-                            controller: _controllerFor_second_password,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.password_rounded),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Confirm your password',
-                              labelText: 'Confirm-Password',
-                              labelStyle: const TextStyle(
+                        child: Card(elevation: 4,
+                          child: Container(
+                            width: 300,
+                           
+                            child: TextField(
+                              obscureText: true,
+                              controller: _controllerFor_second_password,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.password_rounded),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Confirm your password',
+                                labelText: 'Confirm-Password',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius:  BorderRadius.circular(21),
-                          border:
-                              Border.all(color: Colors.white.withOpacity(0.5)),
-                          gradient: LinearGradient(
-                              colors: [
-                                  Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(1.0),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight),
-                        ),
-                        child: TextButton(
-                            onPressed: () {
-                              sign_up_result_page();
-                            },
-                            child: const Text(
-                              'Submit',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'serif',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                     ElevatedButton(onPressed: (){sign_up_result_page();},
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlue,elevation:2
+                      ),
+                      child:const Text("Login ",style: TextStyle(fontFamily: "serif",fontSize: 21,color: Colors.white
+                      ),),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,

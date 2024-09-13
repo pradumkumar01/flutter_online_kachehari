@@ -85,86 +85,51 @@ class _ForgotScreenState extends State<ForgotScreen> {
 
                       Padding(
                         padding: const EdgeInsets.all(11.0),
-                        child: Container(
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(0),
-                                  topLeft: Radius.circular(21),
-                                  bottomRight: Radius.circular(21),
-                                  bottomLeft: Radius.circular(0)),
-                              gradient: LinearGradient(
-                                  colors: [
-                                   Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.3),
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight)),
-                          child: TextField(
-                            controller: _emailCheckController,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.email),
-                              filled: true,
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.1),
-                              prefixIconColor: Colors.black,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none),
-                              hintText: 'Enter your E-mail',
-                              labelText: 'E-mail',
-                              labelStyle: const TextStyle(
+                        child: Card(
+                          elevation: 4,
+                          shadowColor: Colors.grey,
+                          child: Container(
+                            width: 270,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.email),
+                                filled: true,
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                prefixIconColor: Colors.black,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderSide: BorderSide.none),
+                                hintText: 'Enter your E-mail',
+                                labelText: 'E-mail',
+                                labelStyle: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontFamily: 'serif'),
+                                hintStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontFamily: 'serif',
+                                ),
+                              ),
+                              keyboardType: TextInputType.visiblePassword,
+                              style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontFamily: 'serif'),
-                              hintStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif',
-                              ),
                             ),
-                            keyboardType: TextInputType.visiblePassword,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'serif'),
                           ),
                         ),
                       ),
                       const SizedBox(
                         height: 32,
                       ),
-                      Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(0),
-                            topLeft: Radius.circular(21),
-                            bottomRight: Radius.circular(21),
-                          ),
-                          border:
-                              Border.all(color: Colors.white.withOpacity(0.5)),
-                          gradient: LinearGradient(
-                              colors: [
-                                   Colors.blue.withOpacity(0.9),
-                                    Colors.lightBlue.withOpacity(0.8),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight),
-                        ),
-                        child: TextButton(
-                            onPressed: () {
-                              submit_check();
-                            },
-                            child: const Text(
-                              'Submit',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'serif',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                     ElevatedButton(onPressed: (){submit_check();},
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlue,elevation:2
+                      ),
+                      child:const Text("Submit",style: TextStyle(fontFamily: "serif",fontSize: 21,color: Colors.white),),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
